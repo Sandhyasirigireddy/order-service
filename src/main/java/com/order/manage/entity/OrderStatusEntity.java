@@ -1,0 +1,55 @@
+package com.order.manage.entity;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="orderstatus",schema="order_schema")
+public class OrderStatusEntity implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3787495181505308037L;
+	@Id
+	@Column(name="order_status_id")
+	private int orderStatusId;
+	@Column(name="status_name")
+	private String statusName;
+	
+	public OrderStatusEntity() {}
+
+	public OrderStatusEntity(int orderStatusId, String statusName) {
+		super();
+		this.orderStatusId = orderStatusId;
+		this.statusName = statusName;
+	}
+
+	public int getOrderStatusId() {
+		return orderStatusId;
+	}
+
+	public void setOrderStatusId(int orderStatusId) {
+		this.orderStatusId = orderStatusId;
+	}
+
+	public String getStatusName() {
+		return statusName;
+	}
+
+	public void setStatusName(String statusName) {
+		this.statusName = statusName;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderStatusEntity [orderStatusId=" + orderStatusId + ", statusName=" + statusName + "]";
+	}
+	
+	
+
+}
